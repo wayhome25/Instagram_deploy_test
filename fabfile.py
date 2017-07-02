@@ -159,6 +159,9 @@ def _update_static_files():
 
 def _update_database():
     virtualenv_folder = project_folder + '/../.virtualenvs/{}'.format(PROJECT_NAME)
+    run('cd %s && %s/bin/python3 manage.py makemigrations --noinput' % (
+        project_folder, virtualenv_folder
+    ))
     run('cd %s && %s/bin/python3 manage.py migrate --noinput' % (
         project_folder, virtualenv_folder
     ))

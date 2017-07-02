@@ -3,7 +3,7 @@
   "PROJECT_NAME":"mysite",
   "REMOTE_HOST":"instagram-practice.tk",
   "REMOTE_USER":"siwabada",
-  "STATIC_ROOT":"static",
+  "STATIC_ROOT":"staticfiles",
   "STATIC_URL":"static",
   "MEDIA_ROOT":"media"
 }
