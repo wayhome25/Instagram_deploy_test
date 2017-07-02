@@ -1,7 +1,7 @@
 {
-  "REPO_URL":"https://github.com/wayhome25/Instagram",
-  "PROJECT_NAME":"project/mysite",
-  "REMOTE_HOST":"chobo-monkey-instagram.tk",
+  "REPO_URL":"https://github.com/wayhome25/Instagram_deploy_test",
+  "PROJECT_NAME":"mysite",
+  "REMOTE_HOST":"instagram-practice.tk",
   "REMOTE_USER":"siwabada",
   "STATIC_ROOT":"static",
   "STATIC_URL":"static",
