@@ -60,6 +60,14 @@
   text-align: center;
 }
 
+.shortcut .test-account {
+  font-weight: 600;
+}
+
+.shortcut p.signup-link {
+  margin: 10px 0 !important;
+}
+
 .shortcut .link {
   color: #262626;
   font-size: 14px;
