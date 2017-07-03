@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'imagekit',
     'accounts',
     'post',
-    # 'raven.contrib.django.raven_compat',
+    'raven.contrib.django.raven_compat',
 ]
 
 MIDDLEWARE = [
@@ -142,17 +142,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = '/'
 
 # sentry 에러로깅용 세팅
-# import raven
-#
-# GIT_ROOT = BASE_DIR
-# if os.path.exists(os.path.join(GIT_ROOT, '.git')):
-#     release = raven.fetch_git_sha(GIT_ROOT)
-# else:
-#     release = 'dev'
-#
-# RAVEN_CONFIG = {
-#     'dsn': 'https://15375aa500254d7f9df98b98e965aac2:f61b76b37a924d6ea41284fc2e84d4f0@sentry.io/186932',
-#     # If you are using git, you can also automatically configure the
-#     # release based on the git info.
-#     'release': release,
-# }
+import raven
+
+GIT_ROOT = BASE_DIR
+if os.path.exists(os.path.join(GIT_ROOT, '.git')):
+    release = raven.fetch_git_sha(GIT_ROOT)
+else:
+    release = 'dev'
+
+RAVEN_CONFIG = {
+    'dsn': 'https://28d637e049e64256b1324bcc6988d203:357bc6506a4942789fada50328fe4570@sentry.io/186950',
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': release,
+}

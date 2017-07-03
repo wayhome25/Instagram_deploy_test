@@ -151,9 +151,9 @@ def _update_virtualenv():
         virtualenv_folder
     ))
 
-    # run('%s/bin/pip install "raven --upgrade"' % (
-    #     virtualenv_folder
-    # ))
+    run('%s/bin/pip install "raven"' % (
+        virtualenv_folder
+    ))
 
 def _update_static_files():
     virtualenv_folder = project_folder + '/../.virtualenvs/{}'.format(PROJECT_NAME)
