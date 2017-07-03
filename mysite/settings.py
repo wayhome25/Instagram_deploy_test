@@ -25,7 +25,7 @@ SECRET_KEY = 'b_4(!id8ro!1645n@ubnbvf1hbu93gaia0^_o%2$#hw-@but!v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'imagekit',
     'accounts',
     'post',
+    'raven.contrib.django.raven_compat',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,19 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = '/'
+
+# sentry 에러로깅용 세팅
+import raven
+
+GIT_ROOT = BASE_DIR
+if os.path.exists(os.path.join(GIT_ROOT, '.git')):
+    release = raven.fetch_git_sha(GIT_ROOT)
+else:
+    release = 'dev'
+
+RAVEN_CONFIG = {
+    'dsn': 'https://15375aa500254d7f9df98b98e965aac2:f61b76b37a924d6ea41284fc2e84d4f0@sentry.io/186932',
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': release,
+}
