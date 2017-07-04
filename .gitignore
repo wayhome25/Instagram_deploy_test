@@ -3,6 +3,7 @@
 ### custom ###
 dojo/
 *.ipynb
+staticfiles/
 
 ### Database ###
 *.accdb
